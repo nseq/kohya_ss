@@ -124,9 +124,6 @@ if __name__ == '__main__':
         '--inbrowser', action='store_true', help='Open in browser'
     )
     parser.add_argument(
-        '--share', action='store_true', help='Share the gradio UI'
-    )
-    parser.add_argument(
         '--headless', action='store_true', help='Is the server headless'
     )
     parser.add_argument(
@@ -140,7 +137,6 @@ if __name__ == '__main__':
         password=args.password,
         inbrowser=args.inbrowser,
         server_port=args.server_port,
-        share=args.share,
         listen=args.listen,
         headless=args.headless,
         language=args.language,
