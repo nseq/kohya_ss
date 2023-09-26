@@ -1043,7 +1043,6 @@ def UI(**kwargs):
     password = kwargs.get('password')
     server_port = kwargs.get('server_port', 0)
     inbrowser = kwargs.get('inbrowser', False)
-    share = kwargs.get('share', False)
     server_name = kwargs.get('listen')
 
     launch_kwargs['server_name'] = server_name
@@ -1053,8 +1052,6 @@ def UI(**kwargs):
         launch_kwargs['server_port'] = server_port
     if inbrowser:
         launch_kwargs['inbrowser'] = inbrowser
-    if share:
-        launch_kwargs['share'] = share
     interface.launch(**launch_kwargs)
 
 
@@ -1083,9 +1080,6 @@ if __name__ == '__main__':
         '--inbrowser', action='store_true', help='Open in browser'
     )
     parser.add_argument(
-        '--share', action='store_true', help='Share the gradio UI'
-    )
-    parser.add_argument(
         '--headless', action='store_true', help='Is the server headless'
     )
     parser.add_argument(
@@ -1099,7 +1093,6 @@ if __name__ == '__main__':
         password=args.password,
         inbrowser=args.inbrowser,
         server_port=args.server_port,
-        share=args.share,
         listen=args.listen,
         headless=args.headless,
         language=args.language,
