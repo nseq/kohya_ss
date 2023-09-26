@@ -84,7 +84,6 @@ def UI(**kwargs):
     password = kwargs.get('password')
     server_port = kwargs.get('server_port', 0)
     inbrowser = kwargs.get('inbrowser', False)
-    share = kwargs.get('share', False)
     server_name = kwargs.get('listen')
 
     launch_kwargs['server_name'] = server_name
@@ -94,8 +93,6 @@ def UI(**kwargs):
         launch_kwargs['server_port'] = server_port
     if inbrowser:
         launch_kwargs['inbrowser'] = inbrowser
-    if share:
-        launch_kwargs['share'] = share
     interface.launch(**launch_kwargs)
 
 
